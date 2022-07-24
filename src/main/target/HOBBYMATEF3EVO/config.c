@@ -30,7 +30,7 @@
 #include "pg/motor.h"
 
 
-#if defined(SPRACINGF3MQ)
+#if defined(SPRACINGF3MQ) || defined(HOBBYMATEF3EVO)
 #ifdef BRUSHED_MOTORS_PWM_RATE
 #undef BRUSHED_MOTORS_PWM_RATE
 #endif
@@ -40,11 +40,12 @@
 
 void targetConfiguration(void)
 {
+    #if defined(USE_SDCARD)
     // Temporary workaround: Disable SDCard DMA by default since it causes errors on this target
     sdcardConfigMutable()->useDma = false;
+    #endif
 
-#if defined(SPRACINGF3MQ)
-
+#if defined(SPRACINGF3MQ) || defined(HOBBYMATEF3EVO)
     motorConfigMutable()->dev.motorPwmRate = BRUSHED_MOTORS_PWM_RATE;
 
     for (uint8_t pidProfileIndex = 0; pidProfileIndex < PID_PROFILE_COUNT; pidProfileIndex++) {

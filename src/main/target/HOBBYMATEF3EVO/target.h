@@ -41,11 +41,14 @@
 
 #endif // SPRACINGF3MQ
 
-
+#ifdef HOBBYMATEF3EVO
+#define BRUSHED_MOTORS
+#define SERIALRX_PROVIDER SERIALRX_SPEKTRUM2048
+#endif
 
 #define LED0_PIN                PB8
 
-#define USE_BEEPER
+//#define USE_BEEPER
 #define BEEPER_PIN              PC15
 #define BEEPER_INVERTED
 
@@ -66,11 +69,11 @@
 
 #define GYRO_1_ALIGN            CW180_DEG
 
-#define USE_BARO
-#define USE_BARO_BMP280
+//#define USE_BARO
+//#define USE_BARO_BMP280
 
-#define USE_MAG
-#define USE_MAG_AK8963
+//#define USE_MAG
+//#define USE_MAG_AK8963
 //#define USE_MAG_HMC5883 // External
 
 #define MAG_AK8963_ALIGN CW270_DEG_FLIP
@@ -124,7 +127,7 @@
 #define SPI2_MISO_PIN           PB14
 #define SPI2_MOSI_PIN           PB15
 
-#define USE_SDCARD
+//#define USE_SDCARD
 #define USE_SDCARD_SPI
 #define SDCARD_DETECT_INVERTED
 #define SDCARD_DETECT_PIN                   PC14
@@ -151,18 +154,18 @@
 #define CURRENT_METER_ADC_PIN   PA5
 #endif
 
-#if !defined(AIORACERF3)
+#if !defined(AIORACERF3) && !defined(HOBBYMATEF3EVO)
 #define USE_OSD
 #define USE_OSD_OVER_MSP_DISPLAYPORT
 #define USE_MSP_CURRENT_METER
 #endif
 
-#define USE_TRANSPONDER
+//#define USE_TRANSPONDER
 
 #define ENABLE_BLACKBOX_LOGGING_ON_SDCARD_BY_DEFAULT
 
-#define DEFAULT_RX_FEATURE      FEATURE_RX_PPM
-#define DEFAULT_FEATURES        (FEATURE_TRANSPONDER  | FEATURE_RSSI_ADC | FEATURE_TELEMETRY)
+#define DEFAULT_RX_FEATURE      FEATURE_RX_SERIAL
+#define DEFAULT_FEATURES        FEATURE_RSSI_ADC
 
 // IO - stm32f303cc in 48pin package
 #define TARGET_IO_PORTA         0xffff
