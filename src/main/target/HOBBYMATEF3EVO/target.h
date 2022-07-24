@@ -44,6 +44,55 @@
 #ifdef HOBBYMATEF3EVO
 #define BRUSHED_MOTORS
 #define SERIALRX_PROVIDER SERIALRX_SPEKTRUM2048
+#define USE_GYRO_LPF2
+#define USE_LAUNCH_CONTROL
+#define USE_DYN_LPF
+#define USE_D_MIN
+
+#define USE_THROTTLE_BOOST
+#define USE_INTEGRATED_YAW_CONTROL
+
+#define USE_ITERM_RELAX
+#define USE_RC_SMOOTHING_FILTER
+#define USE_THRUST_LINEARIZATION
+#define USE_TPA_MODE
+
+#undef USE_DSHOT
+
+#undef USE_PPM
+#undef USE_PWM
+#undef USE_SERIALRX_FPORT      // FrSky FPort
+#undef USE_SERIALRX_CRSF       // Team Black Sheep Crossfire protocol
+#undef USE_SERIALRX_SBUS       // Frsky and Futaba receivers
+#undef USE_SERIALRX_SUMD       // Graupner Hott protocol
+#undef USE_SERIALRX_SUMH       // Graupner legacy protocol
+#undef USE_SERIALRX_XBUS       // JR
+
+#undef LED_STRIP
+#undef TELEMETRY_FRSKY
+#undef TELEMETRY_HOTT
+#undef TELEMETRY_LTM
+#undef TELEMETRY_SMARTPORT
+#undef USE_TELEMETRY_CRSF
+#undef USE_TELEMETRY_SRXL
+#undef USE_SERVOS
+
+#undef USE_CMS
+#undef USE_MSP_DISPLAYPORT
+#undef USE_MSP_OVER_TELEMETRY
+#undef USE_OSD_OVER_MSP_DISPLAYPORT
+#undef USE_LED_STRIP
+
+#undef USE_VTX_COMMON
+#undef USE_VTX_CONTROL
+#undef USE_VTX_SMARTAUDIO
+#undef USE_VTX_TRAMP
+
+#undef USE_VIRTUAL_CURRENT_METER
+#undef USE_CAMERA_CONTROL
+#undef USE_ESC_SENSOR
+#undef USE_SERIAL_4WAY_BLHELI_BOOTLOADER
+#undef USE_RCDEVICE
 #endif
 
 #define LED0_PIN                PB8
